@@ -57,6 +57,9 @@
       font-size: 17px;
       color: #555;
       margin-bottom: 32px;
+      line-height: 1.8;
+      word-break: keep-all;       /* 日本語の変な場所で折り返しを防ぐ */
+      overflow-wrap: break-word;  /* どうしても長い単語だけは折り返す */
     }
     .checkbox-wrapper {
       display: flex;

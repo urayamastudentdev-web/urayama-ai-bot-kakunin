@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>チャットボット 利用確認</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      font-size: 16px;
+    }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", Meiryo, sans-serif;
+      line-height: 1.5;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e9eef4 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      max-width: 500px;
+      width: 100%;
+      padding: 40px 30px;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card h1 {
+      font-size: 28px;
+      letter-spacing: 0.5px;
+      color: #222;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .card p {
+      font-size: 17px;
+      color: #555;
+      margin-bottom: 32px;
+    }
+    .checkbox-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    .checkbox-wrapper input[type="checkbox"] {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border: 2px solid #aaa;
+      border-radius: 4px;
+      transition: background-color 0.2s, border-color 0.2s;
+      position: relative;
+      margin-right: 12px;
+      cursor: pointer;
+    }
+    .checkbox-wrapper input[type="checkbox"]:checked {
+      background-color: #0066FF;
+      border-color: #0066FF;
+    }
+    .checkbox-wrapper input[type="checkbox"]:checked::after {
+      content: "✓";
+      position: absolute;
+      top: 0;
+      left: 4px;
+      font-size: 16px;
+      color: #fff;
+      line-height: 22px;
+    }
+    .checkbox-wrapper label {
+      font-size: 16px;
+      color: #444;
+      cursor: pointer;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px 0;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(90deg, #0055dd 0%, #0077ff 100%);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .btn:not(:disabled):hover {
+      transform: translateY(-2px);
+      background: linear-gradient(90deg, #0046bb 0%, #0066dd 100%);
+    }
+    @media (max-width: 480px) {
+      .card { padding: 30px 20px; }
+      .card h1 { font-size: 24px; }
+      .btn { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>チャットボット利用前のご確認</h1>
+    <p>
+      以下の内容をご確認のうえ、チェックを入れて「チャットボットを開始する」を押してください。<br>
+      本チャットボットは 専門学校名 の募集要項に関するご質問にお答えする目的で運用されています。<br>
+      **AI が自動で回答を生成するため、実際の募集要項と内容が異なる可能性があります。** 最新かつ正確な情報については、必ず公式の募集要項をご確認ください。
+    </p>
+
+    <div class="checkbox-wrapper">
+      <input type="checkbox" id="agreeCheckbox">
+      <label for="agreeCheckbox">
+        上記を確認し、チャットボットを利用することに同意します。
+      </label>
+    </div>
+
+    <button id="startButton" class="btn" disabled>チャットボットを開始する</button>
+  </div>
+
+  <script>
+    const checkbox = document.getElementById("agreeCheckbox");
+    const startButton = document.getElementById("startButton");
+
+    checkbox.addEventListener("change", () => {
+      startButton.disabled = !checkbox.checked;
+    });
+
+    startButton.addEventListener("click", () => {
+      // ここに遷移先URLを指定してください
+      window.location.href = "https://docsbot.ai/iframe/WTVmZdwavoDgtNYM4N3P/fCsZnUysKQHWilYHunj0";
+    });
+  </script>
+</body>
+</html>
